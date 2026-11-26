@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7fb" />
+  <meta name="description" content="Glinx — find your people, wherever they are." />
+  <title>Glinx — your world, together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-art">
+      <a class="brand brand-light" href="#"><span class="brand-mark">g</span> glinx</a>
+      <div class="auth-art-copy"><div class="eyebrow">A little closer, everywhere</div><h1>Your people.<br><span>Your whole world.</span></h1><p>Meet new perspectives, share the little moments, and keep your favorite people close.</p></div>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">g</div>
+      <div class="floating-note note-one">✦ &nbsp; Better together</div><div class="floating-note note-two">🌍 &nbsp; 128 countries connected</div>
+      <div class="auth-foot">A good place to find your people.</div>
+    </div>
+    <div class="auth-panel"><div class="auth-mobile-brand brand"><span class="brand-mark">g</span> glinx</div>
+      <div class="auth-form-wrap"><div class="auth-welcome"><span class="tiny-spark">✦</span><span id="auth-eyebrow">WELCOME TO GLINX</span></div><h2 id="auth-title">Your next hello<br>starts here.</h2><p id="auth-subtitle">Sign in to pick up right where your people are.</p>
+        <form id="auth-form"><label for="auth-name" id="name-label" class="hidden">Your name</label><input id="auth-name" class="hidden" autocomplete="name" placeholder="Your name" />
+          <label for="auth-email">Email address</label><input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          <label for="auth-password">Password</label><div class="password-wrap"><input id="auth-password" type="password" autocomplete="current-password" placeholder="At least 6 characters" minlength="6" required /><button type="button" class="password-toggle" aria-label="Show password">Show</button></div>
+          <button class="button button-primary auth-submit" type="submit"><span id="auth-submit-text">Sign in</span><span>↗</span></button>
+          <div class="auth-message" id="auth-message" role="status"></div>
+        </form>
+        <div class="auth-switch"><span id="switch-copy">New around here?</span> <button id="auth-switch" type="button">Create an account</button></div>
+        <div class="auth-legal">By continuing, you agree to keep Glinx kind, welcoming, and respectful.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar"><a class="brand" href="#feed" aria-label="Glinx home"><span class="brand-mark">g</span> glinx</a>
+      <label class="search-box"><span>⌕</span><input id="search-input" placeholder="Search people, posts..." aria-label="Search Glinx" /><kbd>⌘ K</kbd></label>
+      <div class="top-actions"><button class="icon-button" id="theme-button" title="Toggle appearance" aria-label="Toggle appearance">☼</button><button class="icon-button notification-button" title="Notifications" aria-label="Notifications">♧<i></i></button><button class="profile-chip" id="profile-menu"><span class="avatar avatar-small" id="top-avatar">G</span><span id="top-name">Guest</span><span class="chevron">⌄</span></button><div id="profile-dropdown" class="profile-dropdown hidden"><button id="edit-profile">✎ &nbsp;Edit profile</button><button id="sign-out">↪ &nbsp;Sign out</button></div></div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar"><div class="side-label">YOUR SPACE</div><nav class="main-nav"><button class="nav-item active" data-view="feed"><span>◫</span> Home feed</button><button class="nav-item" data-view="discover"><span>⌕</span> Discover <span class="nav-count">3</span></button><button class="nav-item" data-view="messages"><span>▤</span> Messages <span class="nav-count" id="message-count">2</span></button><button class="nav-item" data-view="notifications"><span>♡</span> Notifications</button></nav>
+        <div class="side-divider"></div><div class="side-heading"><span>YOUR CIRCLES</span><button id="new-circle" title="Create a circle">＋</button></div><div class="circle-list"><button class="circle-item" data-circle="Creative minds"><span class="circle-dot dot-violet">✳</span> Creative minds <span>12</span></button><button class="circle-item" data-circle="Weekend wanderers"><span class="circle-dot dot-orange">↗</span> Weekend wanderers <span>8</span></button><button class="circle-item" data-circle="Good things club"><span class="circle-dot dot-green">♡</span> Good things club <span>24</span></button></div>
+        <div class="sidebar-bottom"><div class="upgrade-card"><div class="upgrade-icon">✧</div><strong>A little more Glinx</strong><p>Make room for all your favorite people.</p><button id="learn-more">Explore Glinx →</button></div><div class="side-links">About &nbsp;·&nbsp; Guidelines &nbsp;·&nbsp; Privacy</div></div>
+      </aside>
+      <main class="main-content" id="main-content"><div class="feed-column" id="feed-column">
+        <div class="page-heading"><div><div class="eyebrow">THURSDAY, NOVEMBER 26</div><h1>Your world, <span>together.</span></h1><p>A fresh little hello from your corner of the world.</p></div><button class="button button-outline" id="invite-button">＋ <span>Invite a friend</span></button></div>
+        <section class="stories-section"><div class="section-top"><h2>Little moments</h2><button class="text-button" id="all-stories">See all <span>→</span></button></div><div class="stories" id="stories"></div></section>
+        <section class="composer"><div class="avatar" id="composer-avatar">G</div><div class="composer-main"><button class="composer-prompt" id="composer-prompt">What’s something good on your mind?</button><div class="composer-actions"><button class="composer-action" id="add-photo"><span class="green-icon">▧</span> Photo</button><button class="composer-action" id="add-video"><span class="pink-icon">▷</span> Video</button><button class="composer-action" id="add-mood"><span class="yellow-icon">☻</span> Feeling</button><button class="button button-primary post-button" id="open-composer">Create post <span>↗</span></button></div></div></section>
+        <div class="feed-toolbar"><h2 id="feed-title">Your feed <span class="live-dot"></span></h2><button id="feed-filter" class="feed-filter">For you <span>⌄</span></button></div><div id="posts" class="posts"></div>
+      </div></main>
+      <aside class="rightbar"><section class="right-card birthday-card"><div class="birthday-illustration">✳</div><div><div class="eyebrow">A REASON TO CELEBRATE</div><h3>Good things are<br>happening today.</h3><p>Send a little love to someone in your circle.</p><button id="celebrate-button" class="text-button">Spread some joy <span>→</span></button></div></section>
+        <section class="right-card people-card"><div class="section-top"><h2>People to know</h2><button class="text-button" data-open-view="discover">See all <span>→</span></button></div><div id="suggestions"></div></section>
+        <section class="right-card online-card"><div class="section-top"><h2>Your people</h2><span class="online-label"><i></i> 4 around</span></div><div id="online-people"></div><button class="text-button see-chats" data-open-view="messages">Open messages <span>→</span></button></section>
+        <div class="right-footer">Made for the moments that matter. <span>✦</span></div>
+      </aside>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="modal-root"></div>
+  <script src="app.js"></script>
+</body>
+</html>
